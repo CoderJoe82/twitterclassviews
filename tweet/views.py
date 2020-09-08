@@ -4,6 +4,7 @@ from tweet.models import Tweet
 from tweet.forms import TweetForm
 from twitteruser.models import TwitterUser
 from notification.models import Notification
+from django.views.generic import TemplateView
 import re
 
 
@@ -74,9 +75,14 @@ def profile(request, username):
     return render(request, html, context)
 
 
-def tweet_detail(request, id):
-    data = Tweet.objects.get(id=id)
-    return render(request, 'tweet_detail.html', {'data': data})
+# def tweet_detail(request, id):
+#     data = Tweet.objects.get(id=id)
+#     return render(request, 'tweet_detail.html', {'data': data})
+
+class TweetDetail(TemplateView):
+    def get(self, request, id):
+        data = Tweet.objects.get(id=id)
+        return render(request, 'tweet_detail.html', {'data': data})
 
 
 def user_detail(request, id):
