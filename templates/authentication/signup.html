@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Twitter Clone</title>
+    <link rel = "icon" href =  
+"https://developer.twitter.com/content/dam/developer-twitter/icons/twitter.png" 
+        type = "image/x-icon">
+  </head>
+  <body align="center">
+    <h1> Sign Up </h1>
+    <form action="/signup/" method="POST">
+        {% csrf_token %}
+        {{ form.as_p}}
+    <input type="submit" value="Sign Up">
+    <p><a href="/login/">Already have an account?</a></p>
+    </form>
+  </body>
+</html>

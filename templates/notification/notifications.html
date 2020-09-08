@@ -1,0 +1,17 @@
+<title>Twitter Clone</title>
+<link rel="icon" href="https://developer.twitter.com/content/dam/developer-twitter/icons/twitter.png" type="image/x-icon">
+{% if notif_count > 1%}
+    Notifications: {{notif_count}}
+{% endif %}
+
+{% if notif_count == 1%}
+    Notification: {{notif_count}}
+{% endif %}
+
+{% if notif_count < 1%}
+    Notification: 0
+{% endif %}
+
+{% for notif in actual_notifs %}
+    {{notif.notified_tweet}}
+{% endfor %}

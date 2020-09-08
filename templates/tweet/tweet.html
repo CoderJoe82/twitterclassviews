@@ -1,0 +1,13 @@
+<title>Twitter Clone</title>
+<link rel = "icon" href =  
+"https://developer.twitter.com/content/dam/developer-twitter/icons/twitter.png" 
+        type = "image/x-icon">
+<h1><a href="/">HOME</a></h1>
+<div align="center">
+<h1>Tweet</h1>
+<form action="/tweet/" method="POST"> 
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" value="Tweet">
+</form>
+</div>

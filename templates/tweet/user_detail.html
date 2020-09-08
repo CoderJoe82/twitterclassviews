@@ -1,0 +1,23 @@
+<title>Twitter Clone</title>
+<link rel = "icon" href =  
+"https://developer.twitter.com/content/dam/developer-twitter/icons/twitter.png" 
+        type = "image/x-icon">
+<div align="center">
+<p>Username: {{user.username}}</p>
+<p>Follows: {{following_number}}</p>
+
+
+{% if request.user.is_authenticated %}
+    {% if user not in following_list %}
+        <p><a href="/following/{{user.id}}">Follow</a></p>
+    {% endif%}
+    {% if user in following_list %}
+        <p><a href="/unfollowing/{{user.id}}">Unfollow</a></p>
+    {% endif%}
+{% endif %}
+
+
+{% for foo in tweet %}
+    Tweet: {{foo.messagebox}}
+{% endfor %}
+</div>
